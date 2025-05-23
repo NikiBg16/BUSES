@@ -1,0 +1,10 @@
+# Node.js
+node_modules/
+dist/
+
+# Environment
+.env
+
+# IDE
+.idea/
+*.iml
