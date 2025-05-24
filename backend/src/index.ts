@@ -1,6 +1,8 @@
 import express from "express";
 import { AppDataSource } from "./config/data-source";
 import { json } from "body-parser";
+import cors from "cors";
+
 
 import busRoutes from "./routes/busRoutes";
 import stopRoutes from "./routes/StopRoutes";
@@ -11,7 +13,12 @@ import scheduleRoutes from "./routes/scheduleRoutes";
 
 const app = express();
 app.use(json());
-
+app.use(
+    cors({
+        origin: "http://localhost:5173",    // или "http://127.0.0.1:5173"
+        credentials: true,                  // ако ползвате cookies
+    })
+);
 app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
 app.use("/api/routes", routeRoutes);
