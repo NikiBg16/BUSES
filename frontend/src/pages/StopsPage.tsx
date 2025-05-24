@@ -27,10 +27,32 @@ export default function StopsPage() {
     useEffect(fetchStops, []);
 
     return (
-        <main style={{ padding: "1rem" }}>
-            <h1>Списък на спирките</h1>
-            <StopForm onSuccess={() => { fetchStops(); setEditing(null); }} initialData={editing || undefined} />
-            <StopList stops={stops} onDelete={handleDelete} onEdit={handleEdit} />
-        </main>
+        <div className="container mt-4">
+            <h1 className="mb-4 text-center">Списък на спирките</h1>
+
+            <div className="d-flex justify-content-center mb-4">
+                <div className="card w-100" style={{ maxWidth: "600px" }}>
+                    <div className="card-body">
+                        <StopForm
+                            onSuccess={() => {
+                                fetchStops();
+                                setEditing(null);
+                            }}
+                            initialData={editing || undefined}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card">
+                <div className="card-body">
+                    <StopList
+                        stops={stops}
+                        onDelete={handleDelete}
+                        onEdit={handleEdit}
+                    />
+                </div>
+            </div>
+        </div>
     );
 }

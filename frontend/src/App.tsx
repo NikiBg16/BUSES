@@ -6,48 +6,51 @@ import RoutesPage from "./pages/RoutesPage";
 import SchedulesPage from "./pages/SchedulesPage";
 
 export default function App() {
-    const linkStyle = {
-        marginRight: "1rem",
-        textDecoration: "none",
-        color: "black",
-    };
-
-    const activeStyle = {
-        fontWeight: "bold",
-        textDecoration: "underline",
-    };
-
     return (
         <BrowserRouter>
-            <nav style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
-                <NavLink to="/" style={({ isActive }) =>
-                    isActive ? { ...linkStyle, ...activeStyle } : linkStyle
-                }>
-                    Автобуси
-                </NavLink>
-                <NavLink to="/stops" style={({ isActive }) =>
-                    isActive ? { ...linkStyle, ...activeStyle } : linkStyle
-                }>
-                    Спирки
-                </NavLink>
-                <NavLink to="/routes" style={({ isActive }) =>
-                    isActive ? { ...linkStyle, ...activeStyle } : linkStyle
-                }>
-                    Маршрути
-                </NavLink>
-                <NavLink to="/schedules" style={({ isActive }) =>
-                    isActive ? { ...linkStyle, ...activeStyle } : linkStyle
-                }>
-                    Разписания
-                </NavLink>
+            <nav
+              className="navbar bg-white shadow-sm rounded-pill px-4 fixed-top mx-auto"
+              style={{
+                maxWidth: "1000px",
+                top: "1rem",
+                boxShadow: "0 0 4px 2px rgba(255, 0, 150, 0.6), 0 0 12px 4px rgba(0, 119, 255, 0.4)"
+              }}
+            >
+                <div className="container d-flex justify-content-center align-items-center">
+                    <div className="d-flex align-items-center gap-3">
+                        <span style={{ fontSize: "1.5rem" }}>🏠</span>
+                        <NavLink to="/" className={({ isActive }) =>
+                            "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
+                        }>
+                            Автобуси
+                        </NavLink>
+                        <NavLink to="/stops" className={({ isActive }) =>
+                            "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
+                        }>
+                            Спирки
+                        </NavLink>
+                        <NavLink to="/routes" className={({ isActive }) =>
+                            "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
+                        }>
+                            Маршрути
+                        </NavLink>
+                        <NavLink to="/schedules" className={({ isActive }) =>
+                            "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
+                        }>
+                            Разписания
+                        </NavLink>
+                    </div>
+                </div>
             </nav>
 
-            <Routes>
-                <Route path="/" element={<BusesPage />} />
-                <Route path="/stops" element={<StopsPage />} />
-                <Route path="/routes" element={<RoutesPage />} />
-                <Route path="/schedules" element={<SchedulesPage />} />
-            </Routes>
+            <div className="container mt-5 pt-4">
+                <Routes>
+                    <Route path="/" element={<BusesPage />} />
+                    <Route path="/stops" element={<StopsPage />} />
+                    <Route path="/routes" element={<RoutesPage />} />
+                    <Route path="/schedules" element={<SchedulesPage />} />
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }

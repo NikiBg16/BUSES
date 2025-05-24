@@ -30,8 +30,7 @@ const ScheduleList: React.FC<Props> = ({ schedules, onDelete, onEdit }) => {
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Спирка</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Отпътуване</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Задържане (мин)</th>
-                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Действия</th>
-                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Редакция</th>
+                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }} colSpan={2}>Действия</th>
             </tr>
             </thead>
             <tbody>
@@ -42,10 +41,33 @@ const ScheduleList: React.FC<Props> = ({ schedules, onDelete, onEdit }) => {
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{s.departureTime}</td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{s.dwellTime}</td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onDelete(s.id)}>❌</button>
-                    </td>
-                    <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onEdit(s.id)}>✏️</button>
+                        <button
+                          onClick={() => onDelete(s.id)}
+                          style={{
+                            marginRight: "0.5rem",
+                            backgroundColor: "#ff4d4f",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "6px",
+                            padding: "6px 10px",
+                            cursor: "pointer"
+                          }}
+                        >
+                          ❌
+                        </button>
+                        <button
+                          onClick={() => onEdit(s.id)}
+                          style={{
+                            backgroundColor: "#1890ff",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "6px",
+                            padding: "6px 10px",
+                            cursor: "pointer"
+                          }}
+                        >
+                          ✏️
+                        </button>
                     </td>
                 </tr>
             ))}

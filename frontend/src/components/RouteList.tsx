@@ -21,7 +21,6 @@ const RouteList: React.FC<Props> = ({ routes, onDelete, onEdit }) => {
             <tr>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Име</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Действия</th>
-                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Редакция</th>
             </tr>
             </thead>
             <tbody>
@@ -29,10 +28,33 @@ const RouteList: React.FC<Props> = ({ routes, onDelete, onEdit }) => {
                 <tr key={r.id}>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{r.name}</td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onDelete(r.id)}>❌</button>
-                    </td>
-                    <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onEdit(r.id)}>✏️</button>
+                        <button
+                            onClick={() => onDelete(r.id)}
+                            style={{
+                                marginRight: "0.5rem",
+                                backgroundColor: "#ff4d4f",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ❌
+                        </button>
+                        <button
+                            onClick={() => onEdit(r.id)}
+                            style={{
+                                backgroundColor: "#1890ff",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ✏️
+                        </button>
                     </td>
                 </tr>
             ))}

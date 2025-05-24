@@ -77,45 +77,49 @@ const BusForm: React.FC<BusFormProps> = ({ onSuccess, initialData }) => {
         >
             {({ isSubmitting }) => (
                 <Form style={{ marginBottom: "1rem" }}>
-                    <div>
-                        <label htmlFor="number">Номер</label>
-                        <Field id="number" name="number" />
+                    <div className="mb-3">
+                        <label htmlFor="number" className="form-label">Номер</label>
+                        <Field id="number" name="number" className="form-control" />
                         <ErrorMessage
                             name="number"
-                            render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                            render={(msg) => <div className="form-text text-danger">{msg}</div>}
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="carrier">Превозвач</label>
-                        <Field id="carrier" name="carrier" />
+                    <div className="mb-3">
+                        <label htmlFor="carrier" className="form-label">Превозвач</label>
+                        <Field id="carrier" name="carrier" className="form-control" />
                         <ErrorMessage
                             name="carrier"
-                            render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                            render={(msg) => <div className="form-text text-danger">{msg}</div>}
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="capacity">Капацитет</label>
-                        <Field id="capacity" name="capacity" type="number" />
+                    <div className="mb-3">
+                        <label htmlFor="capacity" className="form-label">Капацитет</label>
+                        <Field id="capacity" name="capacity" type="number" className="form-control" />
                         <ErrorMessage
                             name="capacity"
-                            render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                            render={(msg) => <div className="form-text text-danger">{msg}</div>}
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="isActive">
+                    <div className="mb-3">
+                        <label htmlFor="isActive" className="d-flex align-items-center gap-2">
                             <Field id="isActive" name="isActive" type="checkbox" />
                             Активен
                         </label>
                         <ErrorMessage
                             name="isActive"
-                            render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                            render={(msg) => <div className="form-text text-danger">{msg}</div>}
                         />
                     </div>
 
-                    <button type="submit" disabled={isSubmitting}>
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm"
+                    >
                         {isEdit ? "Запази промените" : "Добави автобус"}
                     </button>
                 </Form>

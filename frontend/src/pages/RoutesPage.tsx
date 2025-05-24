@@ -29,20 +29,32 @@ export default function RoutesPage() {
     useEffect(fetchRoutes, []);
 
     return (
-        <main style={{ padding: "1rem" }}>
-            <h1>Списък на маршрутите</h1>
-            <RouteForm
-                onSuccess={() => {
-                    fetchRoutes();
-                    setEditing(null);
-                }}
-                initialData={editing || undefined}
-            />
-            <RouteList
-                routes={routes}
-                onDelete={handleDelete}
-                onEdit={handleEdit}
-            />
-        </main>
+        <div className="container mt-4">
+            <h1 className="mb-4 text-center">Списък на маршрутите</h1>
+
+            <div className="d-flex justify-content-center mb-4">
+                <div className="card w-100" style={{ maxWidth: "600px" }}>
+                    <div className="card-body">
+                        <RouteForm
+                            onSuccess={() => {
+                                fetchRoutes();
+                                setEditing(null);
+                            }}
+                            initialData={editing || undefined}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card">
+                <div className="card-body">
+                    <RouteList
+                        routes={routes}
+                        onDelete={handleDelete}
+                        onEdit={handleEdit}
+                    />
+                </div>
+            </div>
+        </div>
     );
 }

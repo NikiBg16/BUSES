@@ -44,24 +44,35 @@ export default function BusesPage() {
     }, []);
 
     return (
-        <main style={{ padding: "1rem" }}>
-            <h1>Списък на автобусите</h1>
+        <div className="container mt-4">
+            <h1 className="mb-4 text-center">Списък на автобусите</h1>
 
-            {/* Форма за добавяне или редакция */}
-            <BusForm
-                onSuccess={() => {
-                    fetchBuses();
-                    setEditingBus(null);
-                }}
-                initialData={editingBus || undefined}
-            />
+            <div className="d-flex justify-content-center mb-4">
+                <div className="card w-100" style={{ maxWidth: "600px" }}>
+                    <div className="card-body">
+                        <BusForm
+                            onSuccess={() => {
+                                fetchBuses();
+                                setEditingBus(null);
+                            }}
+                            initialData={editingBus || undefined}
+                        />
+                    </div>
+                </div>
+            </div>
 
-            {/* Таблица със списък и бутони за действие */}
-            <BusList
-                buses={buses}
-                onDelete={handleDelete}
-                onEdit={handleEdit}
-            />
-        </main>
+            <div className="card">
+                <div className="card-body">
+                    <BusList
+                        buses={buses}
+                        onDelete={handleDelete}
+                        onEdit={handleEdit}
+                    />
+                </div>
+            </div>
+        <footer className="text-center text-muted mt-5 mb-3">
+            <small>© {new Date().getFullYear()} Bus Manager. Всички права запазени.</small>
+        </footer>
+    </div>
     );
 }

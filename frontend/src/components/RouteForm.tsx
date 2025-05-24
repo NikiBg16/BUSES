@@ -47,15 +47,19 @@ const RouteForm: React.FC<Props> = ({ onSuccess, initialData }) => {
         >
             {({ isSubmitting }) => (
                 <Form style={{ marginBottom: "1rem" }}>
-                    <div>
-                        <label htmlFor="name">Име на маршрут</label>
-                        <Field id="name" name="name" />
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label">Име на маршрут</label>
+                        <Field id="name" name="name" className="form-control" />
                         <ErrorMessage
                             name="name"
-                            render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                            render={(msg) => <div className="form-text text-danger">{msg}</div>}
                         />
                     </div>
-                    <button type="submit" disabled={isSubmitting}>
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm"
+                    >
                         {isEdit ? "Запази" : "Добави маршрут"}
                     </button>
                 </Form>

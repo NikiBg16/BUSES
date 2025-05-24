@@ -1,4 +1,3 @@
-// frontend/src/components/BusList.tsx
 import React from "react";
 
 // Интерфейс за автобус
@@ -31,7 +30,6 @@ const BusList: React.FC<Props> = ({ buses, onDelete, onEdit }) => {
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Капацитет</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Активен</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Действия</th>
-                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Редакция</th>
             </tr>
             </thead>
             <tbody>
@@ -44,10 +42,33 @@ const BusList: React.FC<Props> = ({ buses, onDelete, onEdit }) => {
                         {bus.isActive ? "Да" : "Не"}
                     </td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onDelete(bus.id)}>❌</button>
-                    </td>
-                    <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onEdit(bus.id)}>✏️</button>
+                        <button
+                            onClick={() => onDelete(bus.id)}
+                            style={{
+                                marginRight: "0.5rem",
+                                backgroundColor: "#ff4d4f",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ❌
+                        </button>
+                        <button
+                            onClick={() => onEdit(bus.id)}
+                            style={{
+                                backgroundColor: "#1890ff",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ✏️
+                        </button>
                     </td>
                 </tr>
             ))}

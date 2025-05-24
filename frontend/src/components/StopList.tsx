@@ -27,7 +27,6 @@ const StopList: React.FC<Props> = ({ stops, onDelete, onEdit }) => {
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Ширина</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Дължина</th>
                 <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Действия</th>
-                <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Редакция</th>
             </tr>
             </thead>
             <tbody>
@@ -38,10 +37,33 @@ const StopList: React.FC<Props> = ({ stops, onDelete, onEdit }) => {
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{s.latitude}</td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{s.longitude}</td>
                     <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onDelete(s.id)}>❌</button>
-                    </td>
-                    <td style={{ border: "1px solid #ccc", padding: "0.5rem", textAlign: "center" }}>
-                        <button onClick={() => onEdit(s.id)}>✏️</button>
+                        <button
+                            onClick={() => onDelete(s.id)}
+                            style={{
+                                marginRight: "0.5rem",
+                                backgroundColor: "#ff4d4f",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ❌
+                        </button>
+                        <button
+                            onClick={() => onEdit(s.id)}
+                            style={{
+                                backgroundColor: "#1890ff",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "6px",
+                                padding: "6px 10px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ✏️
+                        </button>
                     </td>
                 </tr>
             ))}

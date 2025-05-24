@@ -59,7 +59,7 @@ export default function SchedulesPage() {
                     fetchAll();
                     setEditing(null);
                 }}
-                initialData={editing || undefined}
+                initialData={editing as any}
             />
             <ScheduleList
                 schedules={schedules}

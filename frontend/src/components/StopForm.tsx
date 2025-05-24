@@ -62,27 +62,27 @@ const StopForm: React.FC<Props> = ({ onSuccess, initialData }) => {
         >
             {({ isSubmitting }) => (
                 <Form style={{ marginBottom: "1rem" }}>
-                    <div>
-                        <label>Име</label>
-                        <Field name="name" />
-                        <ErrorMessage name="name" render={msg => <div style={{ color: "red" }}>{msg}</div>} />
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label">Име</label>
+                        <Field id="name" name="name" className="form-control" />
+                        <ErrorMessage name="name" render={msg => <div className="form-text text-danger">{msg}</div>} />
                     </div>
-                    <div>
-                        <label>Адрес</label>
-                        <Field name="address" />
-                        <ErrorMessage name="address" render={msg => <div style={{ color: "red" }}>{msg}</div>} />
+                    <div className="mb-3">
+                        <label htmlFor="address" className="form-label">Адрес</label>
+                        <Field id="address" name="address" className="form-control" />
+                        <ErrorMessage name="address" render={msg => <div className="form-text text-danger">{msg}</div>} />
                     </div>
-                    <div>
-                        <label>Ширина</label>
-                        <Field name="latitude" type="number" />
-                        <ErrorMessage name="latitude" render={msg => <div style={{ color: "red" }}>{msg}</div>} />
+                    <div className="mb-3">
+                        <label htmlFor="latitude" className="form-label">Ширина</label>
+                        <Field id="latitude" name="latitude" type="number" className="form-control" />
+                        <ErrorMessage name="latitude" render={msg => <div className="form-text text-danger">{msg}</div>} />
                     </div>
-                    <div>
-                        <label>Дължина</label>
-                        <Field name="longitude" type="number" />
-                        <ErrorMessage name="longitude" render={msg => <div style={{ color: "red" }}>{msg}</div>} />
+                    <div className="mb-3">
+                        <label htmlFor="longitude" className="form-label">Дължина</label>
+                        <Field id="longitude" name="longitude" type="number" className="form-control" />
+                        <ErrorMessage name="longitude" render={msg => <div className="form-text text-danger">{msg}</div>} />
                     </div>
-                    <button type="submit" disabled={isSubmitting}>
+                    <button type="submit" disabled={isSubmitting} className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm">
                         {isEdit ? "Запази промените" : "Добави спирка"}
                     </button>
                 </Form>
