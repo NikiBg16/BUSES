@@ -82,7 +82,18 @@ const StopForm: React.FC<Props> = ({ onSuccess, initialData }) => {
                         <Field id="longitude" name="longitude" type="number" className="form-control" />
                         <ErrorMessage name="longitude" render={msg => <div className="form-text text-danger">{msg}</div>} />
                     </div>
-                    <button type="submit" disabled={isSubmitting} className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm">
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn text-white fw-semibold px-4 py-2 rounded-pill shadow-sm"
+                        style={{
+                            background: "linear-gradient(90deg, #ff00cc, #3333ff)",
+                            border: "none",
+                            transition: "transform 0.2s ease-in-out",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    >
                         {isEdit ? "Запази промените" : "Добави спирка"}
                     </button>
                 </Form>

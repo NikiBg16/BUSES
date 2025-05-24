@@ -97,7 +97,11 @@ const ScheduleForm: React.FC<Props> = ({ buses, stops, onSuccess, initialData })
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm"
+                        className="btn btn-lg text-white fw-semibold px-4 rounded-pill shadow-sm schedule-button"
+                        style={{
+                            backgroundImage: "linear-gradient(90deg, #ff33cc, #6633cc)",
+                            border: "none"
+                        }}
                     >
                         {isEdit ? "Запази промените" : "Добави разписание"}
                     </button>

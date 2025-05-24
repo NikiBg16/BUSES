@@ -118,7 +118,11 @@ const BusForm: React.FC<BusFormProps> = ({ onSuccess, initialData }) => {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn btn-lg btn-primary rounded-pill px-4 shadow-sm"
+                        className="btn btn-lg text-white px-5 py-2 rounded-pill"
+                        style={{
+                            background: "linear-gradient(90deg, #ff3cac 0%, #784ba0 100%)",
+                            border: "none",
+                        }}
                     >
                         {isEdit ? "Запази промените" : "Добави автобус"}
                     </button>

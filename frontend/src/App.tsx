@@ -9,16 +9,19 @@ export default function App() {
     return (
         <BrowserRouter>
             <nav
-              className="navbar bg-white shadow-sm rounded-pill px-4 fixed-top mx-auto"
+              className="navbar bg-white shadow-sm rounded-pill px-4 fixed-top"
               style={{
-                maxWidth: "1000px",
+                display: "inline-block",
+                left: "50%",
+                transform: "translateX(-50%)",
                 top: "1rem",
+                paddingInline: "1.5rem",
                 boxShadow: "0 0 4px 2px rgba(255, 0, 150, 0.6), 0 0 12px 4px rgba(0, 119, 255, 0.4)"
               }}
             >
                 <div className="container d-flex justify-content-center align-items-center">
                     <div className="d-flex align-items-center gap-3">
-                        <span style={{ fontSize: "1.5rem" }}>🏠</span>
+                        <span style={{ fontSize: "1.5rem" }}>🚌</span>
                         <NavLink to="/" className={({ isActive }) =>
                             "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
                         }>
