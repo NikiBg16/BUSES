@@ -21,7 +21,9 @@ export default function App() {
             >
                 <div className="container d-flex justify-content-center align-items-center">
                     <div className="d-flex align-items-center gap-3">
-                        <span style={{ fontSize: "1.5rem" }}>🚌</span>
+                        <a href="https://youtu.be/aSHrDIjI9so?t=8" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", textDecoration: "none" }}>
+                          🚌
+                        </a>
                         <NavLink to="/" className={({ isActive }) =>
                             "nav-link px-2" + (isActive ? " fw-bold text-primary neon-nav-link" : " neon-nav-link")
                         }>
